@@ -5,10 +5,11 @@
     :var self.vault_chaff_points: list of representation of chaff points
 """
 
+import os
 import random
 from Polynomial_Generator import PolynomialGenerator
 from Geometric_Hashing_Transformer import GHTransformer
-from Constants import CHECK_CHAFF_POINT_MAPPING,VAULT_LOG_PATH
+from Constants import CHECK_CHAFF_POINT_MAPPING, VAULT_LOG_FOLDER,VAULT_LOG_FILENAME
 
 
 class VaultElement:
@@ -135,8 +136,12 @@ class Vault:
     def create_geom_table(self):
         self.geom_table = GHTransformer.generate_enrollment_table(self.vault_final_elements_pairs)
 
-    def log_vault(self,log_path=VAULT_LOG_PATH):
+    def log_vault(self,log_path=VAULT_LOG_FOLDER + VAULT_LOG_FILENAME):
         """ logging vault to file """
+        
+        if not os.path.exists(VAULT_LOG_FOLDER):
+            os.mkdir(VAULT_LOG_FOLDER)
+            
         # clear the data in the info file
         with open(log_path,'w') as file:
             pass
@@ -145,7 +150,7 @@ class Vault:
             for vault_element in self.vault_final_elements_pairs:
                 file.write('{} {}\n'.format(vault_element.x_rep, vault_element.y_rep))
                 
-    def read_vault(self,log_path=VAULT_LOG_PATH):
+    def read_vault(self,log_path=VAULT_LOG_FOLDER + VAULT_LOG_FILENAME):
         """ read vault to file and populate vault object"""
         
         with open(log_path, 'r') as file:
