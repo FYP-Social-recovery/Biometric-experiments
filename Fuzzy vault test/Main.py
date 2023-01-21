@@ -1,26 +1,44 @@
-from App import capture_new_fp_xyt, enroll_new_fingerprint
+from App import capture_new_fp_xyt, enroll_new_fingerprint, verify_fingerprint
+from Secret_generator import SecretGenerator
 
 from Strings import *
 from Constants import *
 
 if __name__ == '__main__':
+    
+    enroll = False
+    
     enrolling_fp = "FP dataset/Real/1__M_Left_index_finger.jpg"
-    verifying_fp = ""
+    verifying_fp = "FP dataset/Test/Easy/1__M_Left_index_finger_CR.jpg"
     
-    print("Start Enrolling")
-    #  Enroll a new fingerprint
-    good_fp = False
-    
-    ## Capture a new fingerprint
-    good_fp = capture_new_fp_xyt(enrolling_fp)
-    
-    ## If good fp enroll
-    ## else error
-    if not good_fp:
-        print(APP_RETRY_FP)
+    if enroll:
+        print("Start Enrolling")
+        #  Enroll a enrolling fingerprint
+        good_fp = False
+        
+        ## Capture a new fingerprint
+        good_fp = capture_new_fp_xyt(enrolling_fp)
+        
+        ## If good fp enroll
+        ## else error
+        if not good_fp:
+            print(APP_RETRY_FP)
+        else:
+            enroll_new_fingerprint(FP_TEMP_FOLDER + FP_OUTPUT_NAME + '.xyt')
     else:
-        enroll_new_fingerprint(FP_TEMP_FOLDER + FP_OUTPUT_NAME + '.xyt')
-    
+        print("Start Verifying")
+        #  Enroll a verifying fingerprint
+        good_fp = False
+        
+        ## Capture a new fingerprint
+        good_fp = capture_new_fp_xyt(verifying_fp)
+        
+        ## If good fp enroll
+        ## else error
+        if not good_fp:
+            print(APP_RETRY_FP)
+        else:            
+            verify_fingerprint(FP_TEMP_FOLDER + FP_OUTPUT_NAME + '.xyt')
     
     
     

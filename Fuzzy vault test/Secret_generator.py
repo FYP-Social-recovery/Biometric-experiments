@@ -15,7 +15,7 @@ class SecretGenerator:
             :param echo: if True, printing intermediate messages to console
             :returns a number """
 
-        secret_bytes = SecretGenerator.smallest_secret_bytes(poly_degree, crc_length, min_size, echo=False)
+        secret_bytes = SecretGenerator.smallest_secret_bytes(poly_degree, crc_length, min_size, echo=echo)
 
         return len(secret_bytes)
     
@@ -31,7 +31,7 @@ class SecretGenerator:
             :param echo: if True, printing intermediate messages to console
             :returns bytes """
 
-        secret_bytes = SecretGenerator.smallest_secret_bytes(poly_degree, crc_length, min_size, echo=False)
+        secret_bytes = SecretGenerator.smallest_secret_bytes(poly_degree, crc_length, min_size, echo=echo)
         
         return secret_bytes
     

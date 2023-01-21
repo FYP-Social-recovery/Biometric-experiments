@@ -78,24 +78,6 @@ def enroll_new_fingerprint(xyt_path):
 
     print('\n')
     print(APP_ENROLL_SUCCESS)
-    
-def verify_fp(id_to_verify):
-    # Scanning fingerprint, recapture if not enough good minutiae
-    good_fp = False
-    
-    while not good_fp:
-        good_fp = capture_new_fp_xyt(id_to_verify)
-        if not good_fp:
-            print(APP_RETRY_FP)
-            retry_input = input(APP_RETRY_MESSAGE)
-            if(retry_input.lower()=="n"):
-                break
-            
-    # calculating secret length according to poly degree and crc
-    secret_length = SecretGenerator.get_smallest_secret_length(POLY_DEGREE, CRC_LENGTH, min_size=128, echo=True) * 8
-    
-    return verify_fingerprint(id_to_verify, FP_TEMP_FOLDER + FP_OUTPUT_NAME + id_to_verify + "/" +  FP_OUTPUT_NAME + id_to_verify + '.xyt',
-                        secret_length)
 
 def generate_vault(xyt_input_path, minutiae_points_amount, chaff_points_amount, poly_degree, secret, crc_length,
                    gf_exp, echo=False):
@@ -125,7 +107,7 @@ def generate_vault(xyt_input_path, minutiae_points_amount, chaff_points_amount, 
             genuine_minutiae_list.append(candidate)
     if echo:
         print("Amount of genuin minutiae : ", len(genuine_minutiae_list))
-        # print("genuin minutiae : ", genuine_minutiae_list)
+        # print("Genuin minutiae : ", genuine_minutiae_list)
     for minutia in genuine_minutiae_list:
         vault.add_minutia_rep(m2b.get_uint_from_minutia(minutia))
     
@@ -137,7 +119,7 @@ def generate_vault(xyt_input_path, minutiae_points_amount, chaff_points_amount, 
     
     if echo:
         print("Amount of chaff points : ", len(chaff_points_list))
-        # print("chaff minutiae : ", chaff_points_list)
+        # print("Chaff minutiae : ", chaff_points_list)
         
     # generate secret polynomial
     secret_poly_generator = PolynomialGenerator(secret, poly_degree, crc_length, gf_exp)
@@ -155,12 +137,15 @@ def generate_vault(xyt_input_path, minutiae_points_amount, chaff_points_amount, 
 
     return vault
 
-def verify_fingerprint(vault_id, xyt_path, secret_length):
+def verify_fingerprint(xyt_path):
 
     db_vault = Vault()
     db_vault.read_vault() # retrieve vault
     
     if db_vault:
+        # calculating secret length according to poly degree and crc
+        secret_length = SecretGenerator.get_smallest_secret_length(POLY_DEGREE, CRC_LENGTH, min_size=128, echo=False) * 8
+            
         db_vault.create_geom_table()
         success = verify_secret(xyt_path, MINUTIAE_POINTS_AMOUNT, POLY_DEGREE, CRC_LENGTH, secret_length,
                                 GF_2_M, db_vault, echo=False)
