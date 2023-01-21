@@ -8,8 +8,11 @@ if __name__ == '__main__':
     
     enroll = False
     
+    secret = 81985529216486895
+    
     enrolling_fp = "FP dataset/Real/1__M_Left_index_finger.jpg"
     verifying_fp = "FP dataset/Test/Easy/1__M_Left_index_finger_CR.jpg"
+    
     
     if enroll:
         print("Start Enrolling")
@@ -24,7 +27,7 @@ if __name__ == '__main__':
         if not good_fp:
             print(APP_RETRY_FP)
         else:
-            enroll_new_fingerprint(FP_TEMP_FOLDER + FP_OUTPUT_NAME + '.xyt')
+            enroll_new_fingerprint(FP_TEMP_FOLDER + FP_OUTPUT_NAME + '.xyt', secret)
     else:
         print("Start Verifying")
         #  Enroll a verifying fingerprint

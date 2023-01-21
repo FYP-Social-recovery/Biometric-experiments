@@ -64,9 +64,9 @@ def run_mindtct(image_path):
     mindtct = Popen(['mindtct', image_path, FP_TEMP_FOLDER + FP_OUTPUT_NAME], stdout=PIPE, stderr=PIPE)
     mindtct.communicate()
 
-def enroll_new_fingerprint(xyt_path):
+def enroll_new_fingerprint(xyt_path, secret):
     # calculate secret according to polynomial degree. secret has to be able to be encoded in bytes (*8)
-    secret_bytes = SecretGenerator.generate_generate_smallest_secret(POLY_DEGREE, CRC_LENGTH, min_size=128, echo=True)
+    secret_bytes = SecretGenerator.generate_smallest_secret_with_predefined_secret(POLY_DEGREE, CRC_LENGTH, secret, min_size=128, echo=True)
     print(APP_FV_SECRET)
 
     fuzzy_vault = generate_vault(xyt_path, MINUTIAE_POINTS_AMOUNT, CHAFF_POINTS_AMOUNT, POLY_DEGREE,
@@ -152,7 +152,7 @@ def verify_fingerprint(xyt_path):
         
         db_vault.clear_vault()
         if success:
-            print("Generated secret is : ", SecretGenerator.extract_secret_from_polynomial(success, CRC_LENGTH, secret_length, POLY_DEGREE))
+            print("Generated secret is : ", SecretGenerator.extract_secret_from_polynomial_for_predefined_secret(success, CRC_LENGTH, secret_length, POLY_DEGREE, min_size=128))
             print(APP_VERIFY_SUCCESS)
             return True
         else:
