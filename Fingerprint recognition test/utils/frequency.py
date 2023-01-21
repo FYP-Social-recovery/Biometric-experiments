@@ -53,7 +53,6 @@ def ridge_freq(im, mask, orient, block_size, kernel_size, minWaveLength, maxWave
     # fingerprint image.
     rows,cols = im.shape
     freq = np.zeros((rows,cols))
-
     for row in range(0, rows - block_size, block_size):
         for col in range(0, cols - block_size, block_size):
             image_block = im[row:row + block_size][:, col:col + block_size]
@@ -69,5 +68,5 @@ def ridge_freq(im, mask, orient, block_size, kernel_size, minWaveLength, maxWave
     ind = ind[1,:]
     non_zero_elems_in_freq = freq_1d[0][ind]
     medianfreq = np.median(non_zero_elems_in_freq) * mask
-
+        
     return medianfreq

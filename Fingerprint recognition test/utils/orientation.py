@@ -113,7 +113,7 @@ def visualize_angles(im, mask, angles, W):
             if radian > mask_threshold:
                 tang = math.tan(angles[(j - 1) // W][(i - 1) // W])
                 (begin, end) = get_line_ends(i, j, W, tang)
-                cv.line(result, begin, end, color=150)
+                cv.line(result, begin, end, color=200)
 
     cv.resize(result, im.shape, result)
     return result

@@ -1,0 +1,240 @@
+==================================
+
+Real Fingerprint count - 100
+Test FingerPrints counts
+Easy - 299
+Medium - 291
+Hard - 247
+
+==================================
+
+Test 1
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 6 #12
+Y_THRESHOLD = 6 #12
+THETA_THRESHOLD = 6 #12
+TOTAL_THRESHOLD = 12 #25
+BASIS_THETA_THRESHOLD = 5 #10
+
+GAR
+=====
+Easy - 265 - 88.6%
+Medium - 149 - 51.2%
+Hard - 99 - 40.1%
+
+FAR (from 300 FPs)
+====
+1 - 0.33%
+
+==================================
+
+Test 2
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 9 #12
+Y_THRESHOLD = 9 #12
+THETA_THRESHOLD = 9 #12
+TOTAL_THRESHOLD = 18 #25
+BASIS_THETA_THRESHOLD = 7 #10
+
+GAR
+=====
+Easy - 
+Medium - 
+Hard - 132 - 53.44%
+
+FAR (from 80 FPs)
+====
+6 - 7.5%
+
+==================================
+
+Test 3
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 8 #12
+Y_THRESHOLD = 8 #12
+THETA_THRESHOLD = 8 #12
+TOTAL_THRESHOLD = 15 #25
+BASIS_THETA_THRESHOLD = 7 #10
+
+GAR
+=====
+Easy - 
+Medium - 
+Hard - 125 - 50.6%
+
+FAR
+====
+14 - 4.67%
+
+==================================
+
+Test 4
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 8 #12
+Y_THRESHOLD = 8 #12
+THETA_THRESHOLD = 8 #12
+TOTAL_THRESHOLD = 20 #25
+BASIS_THETA_THRESHOLD = 7 #10
+
+GAR
+=====
+Easy - 
+Medium - 
+Hard - 126 - 51%
+
+FAR (from 300 FPs)
+====
+14 - 4.67%
+
+==================================
+
+Test 5
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 8 #12
+Y_THRESHOLD = 8 #12
+THETA_THRESHOLD = 10 #12
+TOTAL_THRESHOLD = 20 #25
+BASIS_THETA_THRESHOLD = 8 #10
+
+GAR
+=====
+Easy - 
+Medium - 
+Hard - 126 - 51%
+
+FAR (from 300 FPs)
+====
+15 - 5%
+
+
+Test 6
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 8 #12
+Y_THRESHOLD = 8 #12
+THETA_THRESHOLD = 8 #12
+TOTAL_THRESHOLD = 20 #25
+BASIS_THETA_THRESHOLD = 7 #10
+
+---Easy---
+
+GAR
+=====
+90/90 - 100%
+
+FAR (from 2610 FPs)
+====
+125 - 4.7%
+
+Test 7
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 6 #12
+Y_THRESHOLD = 6 #12
+THETA_THRESHOLD = 6 #12
+TOTAL_THRESHOLD = 12 #25
+BASIS_THETA_THRESHOLD = 5 #10
+
+---Easy---
+
+GAR
+=====
+89/90 - 98.9%
+
+FAR (from 2610 FPs)
+====
+9 - 0.3%
+
+---Hard---
+
+GAR
+=====
+39/82 - 47.5%
+
+FAR (from 2618 FPs)
+====
+7 - 0.26%%
+
+Test 8
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 7 #12
+Y_THRESHOLD = 7 #12
+THETA_THRESHOLD = 7 #12
+TOTAL_THRESHOLD = 14 #25
+BASIS_THETA_THRESHOLD = 6 #10
+
+---Easy---
+
+GAR
+=====
+89/90 - 98.9%
+
+FAR (from 2610 FPs)
+====
+48 - 1.8%
+
+---Hard---
+
+GAR
+=====
+42/82 - 51.2%
+
+FAR (from 2618 FPs)
+====
+16 - 0.6%%
+
+Test 9 - Constants not sure
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 7 #12
+Y_THRESHOLD = 7 #12
+THETA_THRESHOLD = 7 #12
+TOTAL_THRESHOLD = 14 #25
+BASIS_THETA_THRESHOLD = 6 #10
+
+---Hard---
+
+GAR
+=====
+42/82 - 51.2%
+
+FAR (from 2618 FPs)
+====
+16 - 0.6%%
+
+Test 10
+====================
+
+# Constants Vault_Verifier
+X_THRESHOLD = 7 #12
+Y_THRESHOLD = 7 #12
+THETA_THRESHOLD = 7 #12
+TOTAL_THRESHOLD = 16 #25
+BASIS_THETA_THRESHOLD = 7 #10
+
+---Hard---
+
+GAR
+=====
+42/82 - 51.2%
+
+FAR (from 2618 FPs)
+====
+16 - 0.6%%
+
+

@@ -28,12 +28,13 @@ def gabor_filter(im, orient, freq, kx=0.65, ky=0.65):
 
     # Round the array of frequencies to the nearest 0.01 to reduce the
     # number of distinct frequencies we have to deal with.
+    
     freq_1d = freq.flatten()
     frequency_ind = np.array(np.where(freq_1d>0))
     non_zero_elems_in_freq = freq_1d[frequency_ind]
     non_zero_elems_in_freq = np.double(np.round((non_zero_elems_in_freq*100)))/100
     unfreq = np.unique(non_zero_elems_in_freq)
-    
+
     # Generate filters corresponding to these distinct frequencies and
     # orientations in 'angleInc' increments.
     sigma_x = 1/unfreq*kx

@@ -1,7 +1,7 @@
 """
 In order to eliminate the edges of the image and areas that are too noisy, segmentation is
 necessary. It is based on the calculation of the variance of gray levels. For this purpose, the image
-is divided into sub-blocks of (W × W) size’s and for each block the variance.
+is divided into sub-blocks of (W × W) size’s and for each block the variance is calculated.
 Then, the root of the variance of each block is compared with a threshold T, if the value obtained
 is lower than the threshold, then the corresponding block is considered as the background of the
 image and will be excluded by the subsequent processing.
@@ -53,9 +53,18 @@ def create_segmented_and_variance_images(im, w, threshold=.2):
 
     # normalize segmented image
     segmented_image *= mask
+
     im = normalise(im)
-    mean_val = np.mean(im[mask==0])
-    std_val = np.std(im[mask==0])
-    norm_img = (im - mean_val)/(std_val)
+    mean_val = 0
+    std_val = 1
+
+    if(len(im[mask==0])!=0):
+        mean_val = np.mean(im[mask==0])
+        std_val = np.std(im[mask==0])
+
+    if (std_val == 0):
+        norm_img = (im - mean_val)
+    else:
+        norm_img = (im - mean_val)/(std_val)
 
     return segmented_image, norm_img, mask

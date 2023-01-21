@@ -21,12 +21,12 @@ def normalize_pixel(x, v0, v, m, m0):
     return m0 + dev_coeff if x > m else m0 - dev_coeff
 
 def normalize(im, m0, v0):
-    m = np.mean(im)
-    v = np.std(im) ** 2
+    m = np.mean(im) # calculate image mean
+    v = np.std(im) ** 2 # calculate image standered diviation
     (y, x) = im.shape
     normilize_image = im.copy()
     for i in range(x):
         for j in range(y):
             normilize_image[j, i] = normalize_pixel(im[j, i], v0, v, m, m0)
-
+            
     return normilize_image
