@@ -3,7 +3,7 @@
 # Constants variable
 POLY_DEGREE = 8
 MINUTIAE_POINTS_AMOUNT = 30
-CHAFF_POINTS_AMOUNT = 200
+CHAFF_POINTS_AMOUNT = 300
 
 # Constants fixed
 # Galois field exponent
@@ -11,9 +11,10 @@ GF_2_M = 32
 CRC_LENGTH = 32
 
 # input files
-FP_TEMP_FOLDER = 'fp_temp/'
-FP_OUTPUT_NAME = 'temp'
-VAULT_LOG_PATH = 'vault/vault.txt'
+FP_TEMP_FOLDER = 'temp_fp/'
+FP_OUTPUT_NAME = 'temp_fp'
+VAULT_LOG_FOLDER = 'vault/'
+VAULT_LOG_FILENAME = 'vault.txt'
 
 # Distance that minutiae (genuine minutiae and chaff points) have to at least be apart
 POINTS_DISTANCE = 10
