@@ -7,9 +7,9 @@
 
 import os
 import random
-from Polynomial_Generator import PolynomialGenerator
-from Geometric_Hashing_Transformer import GHTransformer
-from Constants import CHECK_CHAFF_POINT_MAPPING, VAULT_LOG_FOLDER,VAULT_LOG_FILENAME
+from fuzzy_vault_utils.Polynomial_Generator import PolynomialGenerator
+from fuzzy_vault_utils.Geometric_Hashing_Transformer import GHTransformer
+from fuzzy_vault_utils.Constants import CHECK_CHAFF_POINT_MAPPING, VAULT_LOG_FOLDER,VAULT_LOG_FILENAME
 
 
 class VaultElement:

@@ -1,8 +1,7 @@
 from App import capture_new_fp_xyt, enroll_new_fingerprint, verify_fingerprint
-from Secret_generator import SecretGenerator
 
-from Strings import *
-from Constants import *
+from fuzzy_vault_utils.Strings import *
+from fuzzy_vault_utils.Constants import *
 
 if __name__ == '__main__':
     

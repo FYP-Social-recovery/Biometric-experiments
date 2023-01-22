@@ -5,7 +5,7 @@
 """
 
 from bitstring import BitArray
-from Minutia import MinutiaNBIS, MinutiaNBIS_GH
+from fuzzy_vault_utils.Minutia import MinutiaNBIS, MinutiaNBIS_GH
 
 
 class MinutiaConverter:

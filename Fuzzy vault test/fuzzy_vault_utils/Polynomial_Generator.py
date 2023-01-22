@@ -5,8 +5,8 @@
 from bitstring import BitArray
 import binascii
 
-from Galois.Galois_Converter import GaloisConverter
-from Galois.Galois_Field import GF
+from fuzzy_vault_utils.Galois.Galois_Converter import GaloisConverter
+from fuzzy_vault_utils.Galois.Galois_Field import GF
 
 
 class PolynomialGenerator:

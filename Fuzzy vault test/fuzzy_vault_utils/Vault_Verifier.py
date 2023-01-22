@@ -5,12 +5,12 @@
 import random
 import time
 
-import Constants
-from Geometric_Hashing_Transformer import GHTransformer
-from Minutia import Minutia
-from Minutia_Converter import MinutiaConverter
-from Polynomial_Extractor import PolynomialExtractor
-from Vault import Vault
+import fuzzy_vault_utils.Constants as Constants
+from fuzzy_vault_utils.Geometric_Hashing_Transformer import GHTransformer
+from fuzzy_vault_utils.Minutia import Minutia
+from fuzzy_vault_utils.Minutia_Converter import MinutiaConverter
+from fuzzy_vault_utils.Polynomial_Extractor import PolynomialExtractor
+from fuzzy_vault_utils.Vault import Vault
 
 
 class VaultVerifier:

@@ -3,8 +3,8 @@
 """
 
 import math
-from Minutia import MinutiaNBIS_GH
-from Minutia_Converter import MinutiaConverter
+from fuzzy_vault_utils.Minutia import MinutiaNBIS_GH
+from fuzzy_vault_utils.Minutia_Converter import MinutiaConverter
 
 
 class GHTransformer:

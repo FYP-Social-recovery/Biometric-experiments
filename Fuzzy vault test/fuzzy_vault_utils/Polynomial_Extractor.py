@@ -13,11 +13,11 @@ from itertools import combinations
 from random import shuffle, sample
 from math import factorial
 
-import Constants
-from Vault import Vault
-from Galois.Poly_Ring import PolyRing
-from Galois.Galois_Converter import GaloisConverter
-from Galois.Galois_Field import GF
+import fuzzy_vault_utils.Constants as Constants
+from fuzzy_vault_utils.Vault import Vault
+from fuzzy_vault_utils.Galois.Poly_Ring import PolyRing
+from fuzzy_vault_utils.Galois.Galois_Converter import GaloisConverter
+from fuzzy_vault_utils.Galois.Galois_Field import GF
 
 
 class PolynomialExtractor:

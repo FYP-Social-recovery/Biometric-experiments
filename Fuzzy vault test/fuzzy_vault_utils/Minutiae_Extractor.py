@@ -3,7 +3,7 @@
 """
 
 
-from Minutia import MinutiaNBIS
+from fuzzy_vault_utils.Minutia import MinutiaNBIS
 
 
 class MinutiaeExtractor:

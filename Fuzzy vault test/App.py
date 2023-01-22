@@ -1,20 +1,21 @@
 """ Fuzzy vault experiment with fingerprint as biometric trait """
 
-from Chaff_Points_Generator import ChaffPointsGenerator
-from Minutia_Converter import MinutiaConverter
-from Minutiae_Extractor import MinutiaeExtractor
-from Polynomial_Generator import PolynomialGenerator
-from Secret_generator import SecretGenerator
-from Strings import *
-from Constants import *
+
+from fuzzy_vault_utils.Chaff_Points_Generator import ChaffPointsGenerator
+from fuzzy_vault_utils.Minutia_Converter import MinutiaConverter
+from fuzzy_vault_utils.Minutiae_Extractor import MinutiaeExtractor
+from fuzzy_vault_utils.Polynomial_Generator import PolynomialGenerator
+from fuzzy_vault_utils.Secret_generator import SecretGenerator
+from fuzzy_vault_utils.Strings import *
+from fuzzy_vault_utils.Constants import *
 
 import random
 import os
 from PIL import Image
 from subprocess import Popen, PIPE
-from Vault import Vault
+from fuzzy_vault_utils.Vault import Vault
 
-from Vault_Verifier import VaultVerifier
+from fuzzy_vault_utils.Vault_Verifier import VaultVerifier
 
 def capture_new_fp_xyt(capturing_fp, echo=False):
     """

@@ -3,8 +3,8 @@
 """
 
 import random
-from Minutia import MinutiaNBIS
-import Constants
+from fuzzy_vault_utils.Minutia import MinutiaNBIS
+import fuzzy_vault_utils.Constants as Constants
 
 
 class ChaffPointsGenerator:
